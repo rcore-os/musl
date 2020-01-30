@@ -9,3 +9,5 @@ long __syscall_ret(unsigned long r)
 	}
 	return r;
 }
+
+long rcore_syscall_entry __attribute__((section(".rodata"))) = 0xdeadbeaf;

@@ -14,7 +14,7 @@ __clone:
 	and $-16,%rsi
 	sub $8,%rsi
 	mov %rcx,(%rsi)
-	syscall
+	call __rcore_syscall
 	test %eax,%eax
 	jnz 1f
 	xor %ebp,%ebp
@@ -23,6 +23,6 @@ __clone:
 	mov %eax,%edi
 	xor %eax,%eax
 	mov $60,%al
-	syscall
+	call __rcore_syscall
 	hlt
 1:	ret
